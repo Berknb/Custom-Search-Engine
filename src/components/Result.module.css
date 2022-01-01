@@ -1,0 +1,136 @@
+.main{
+  display: flex;
+  justify-content: center;
+}
+.dropdown{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3rem;
+}
+.Select{
+  width: 14%;
+}
+.Select i{
+  font-size: 20px;
+}
+.list{
+  width: 70%;
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 5rem;
+  flex-direction: column;
+  list-style: none;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding-left: 0;
+}
+.listItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 5px;
+}
+.icons{
+  font-size: 20px;
+}
+.listItem:hover{
+    background-color: #F3F3F3;
+}
+.paginateMain{
+  display: flex;
+  justify-content: center;
+  padding-right: 4rem;
+}
+.PaginateList{
+  margin-top: 1rem;
+  margin-right: 5rem;
+  border: solid 1px grey;
+  width: 70%;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.paginatelistItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 9px 30px 9px 30px;
+}
+.paginatelistItem:hover{
+  background-color: #F3F3F3;
+}
+.paginationBttns{
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginationBttns a{
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.paginationBttns a:hover{
+  color: white;
+  background-color: #204080;
+}
+.paginationActive a{
+  color: white;
+  background-color: #204080;
+}
+.NotMatching{
+  margin-left: 18rem;
+}
+
+@media screen and (max-width:900px) {
+  .main{
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .dropdown{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0;
+  }
+  .Select{
+    width: 28.5%;
+    margin-right: 2rem;
+    font-size: 11px;
+  }
+  .Select i{
+    font-size: 15px;
+  }
+  .list{
+    width: 100%;
+    margin-right: 0;
+  }
+  .listItem{
+    display: flex;
+    font-size: 10.6px;
+    padding: 5px;
+  }
+  .icons{
+    font-size: 15px;
+  }
+  .PaginateList{
+    margin-right: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .paginatelistItem{
+    font-size: 10.6px;
+    padding: 5px;
+  }
+  .NotMatching{
+    margin-left: 15px;
+    font-size: 15px;
+  }
+}
