@@ -49,7 +49,7 @@ export default function Home() {
       }      
    }
    // ------------------------------ Main -----------------------------------------------
-   if(filtered.length === 0 && value !== ""){
+   if(filtered.length === 0){
      return (
      <div className={Classes.main}>
       <img src={logo} alt='tesodevLogo'/>
@@ -73,6 +73,7 @@ export default function Home() {
           <input type="text" className={errorStyle} id='searchBar' placeholder='Search Something ...' onChange={showResults} onKeyPress={searchOnEnter} ></input>
           <button className={Classes.searchBtn} id='searchBtn' onClick={searchBtn}>Search</button>
           </div>
+          {value.length > 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold"}}><p>{filtered.length} results found with '{value}';</p></div>}
           <p id='errorText' className={Classes.errortext}>First write something to search ! You can search by name,surname or year </p>
           {filtered && filtered.length > 0 && value.length > 1 && <ul className={Classes.results}>
                 {filtered.map((item) => {
@@ -95,6 +96,7 @@ export default function Home() {
           <input type="text" className={errorStyle} id='searchBar' placeholder='Search Something ...' onChange={showResults} onKeyPress={searchOnEnter} ></input>
           <button className={Classes.searchBtn} id='searchBtn' onClick={searchBtn}>Search</button>
           </div>
+          {value.length > 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold"}}><p>{filtered.length} results found with '{value}';</p></div>}
           <p id='errorText' className={Classes.errortext}>First write something to search ! You can search by name,surname or year </p>
           {filtered && filtered.length > 0 && value.length > 1 && <ul className={Classes.results}>
                 {filtered.slice(0,3).map((item) => {
