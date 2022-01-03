@@ -59,7 +59,7 @@ export default function Home() {
         </div>
         <span className={Classes.NotMatching}>
         <h3>No matches found starting with '{value}'</h3>
-        <h4>Try to search like example: (<strong> name:"peter" </strong>,<strong> surname:"kline" </strong>or<strong>only search with year:"2021"</strong>)</h4>
+        <h4>Try to search like example: (<strong> name:"peter" </strong>,<strong> surname:"kline" </strong>&nbsp;or<strong>only search with year:"2021"</strong>)</h4>
         </span>
         <p id='errorText' className={Classes.errortext}>First write something to search ! You can search by name,surname or year </p>
         </div>
