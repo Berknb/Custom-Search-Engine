@@ -98,7 +98,7 @@ export default function Result(props) {
 return (
   <div className={Classes.NotMatching}>
         <h3>No matches found with starting with '{word}'</h3>
-        <h4>Try to search with like example: (<strong> name:"peter" </strong>,<strong> surname:"kline" </strong>&nbsp;or<strong>only search with year:"2021"</strong>)</h4>
+        <h4>Try to search with like example: (<strong> name:"peter" </strong>,<strong> surname:"kline" </strong>&nbsp;or<strong> only search with year:"2021"</strong>)</h4>
         </div>
 )
     }else{
