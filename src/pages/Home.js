@@ -49,7 +49,7 @@ export default function Home() {
       }      
    }
    // ------------------------------ Main -----------------------------------------------
-   if(filtered.length === 0){
+   if(filtered.length === 0 && value !== ""){
      return (
      <div className={Classes.main}>
       <img src={logo} alt='tesodevLogo'/>
