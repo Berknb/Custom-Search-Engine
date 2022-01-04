@@ -97,6 +97,7 @@ export default function Result(props) {
     
     // ------------------------------ Main -----------------------------------------------
     if(filtered.length === 0){
+     
 return (
   <div className={Classes.NotMatching}>
         <h3>No matches found with starting with '{word}'</h3>
@@ -105,6 +106,7 @@ return (
 )
     }else{
       if(filtered.length<=3){
+        
         return (
             <div>
                 <div className={Classes.dropdown}>
@@ -140,6 +142,7 @@ return (
             </div>
         )
     }else{
+      
         return(
             <div>
                 <div className={Classes.dropdown}>
@@ -161,7 +164,7 @@ return (
                 </div>
             <div className={Classes.main}>
             <div className={Classes.PaginateList}>
-            {word.length > 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
+            {<div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
             {displayResults}
             <div className={Classes.paginateMain}>
             <ReactPaginate
