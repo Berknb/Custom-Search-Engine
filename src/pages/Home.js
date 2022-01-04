@@ -78,7 +78,7 @@ export default function Home() {
           {filtered && filtered.length > 0 && value.length > 1 && <ul className={Classes.results}>
                 {filtered.map((item) => {
                     return (
-                    <li className={Classes.listItem}>
+                    <li className={Classes.listItem} key={item[2]}>
                          <p><span className={Classes.icons}><ImLocation/></span>&nbsp;{item[4] + " - " + item[5]}<p><span className={Classes.icons}><FaUser/></span>&nbsp;<strong>{item[0] + " - " + item[3]}</strong></p></p>
                             <p><span className={Classes.icons}><MdEmail/></span>&nbsp;<a href={`mailto:${item[2]}`} >{item[2]}</a><p><span className={Classes.icons}><IoBusiness/>&nbsp;</span>{item[1]}</p></p>
                     </li>
@@ -101,7 +101,7 @@ export default function Home() {
           {filtered && filtered.length > 0 && value.length > 1 && <ul className={Classes.results}>
                 {filtered.slice(0,3).map((item) => {
                     return (
-                    <li className={Classes.listItem}>
+                    <li className={Classes.listItem} key={item[2]}>
                          <p><span className={Classes.icons}><ImLocation/></span>&nbsp;{item[4] + " - " + item[5]}<p><span className={Classes.icons}><FaUser/></span>&nbsp;<strong>{item[0] + " - " + item[3]}</strong></p></p>
                             <p><span className={Classes.icons}><MdEmail/></span>&nbsp;<a href={`mailto:${item[2]}`} >{item[2]}</a><p><span className={Classes.icons}><IoBusiness/>&nbsp;</span>{item[1]}</p></p>
                     </li>

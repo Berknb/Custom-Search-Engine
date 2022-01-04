@@ -86,7 +86,7 @@ export default function Result(props) {
     const displayResults = results.slice(pagesVisited,pagesVisited + resultsPerPage).map(item => {
         return (
                <ul style={{padding:"0",margin:"0"}}>
-                        <li className={Classes.paginatelistItem}>
+                        <li key={item[2]} className={Classes.paginatelistItem}>
                         <p><span className={Classes.icons}><ImLocation/></span>&nbsp;{item[4] + " - " + item[5]}<p><span className={Classes.icons}><FaUser/></span>&nbsp;<strong>{item[0] + " - " + item[3]}</strong></p></p>
                             <p><span className={Classes.icons}><MdEmail/></span>&nbsp;<a href={`mailto:${item[2]}`} >{item[2]}</a><p><span className={Classes.icons}><IoBusiness/>&nbsp;</span>{item[1]}</p></p>
                         </li>
@@ -96,7 +96,7 @@ export default function Result(props) {
     })
     const t1 = performance.now();
     
-    
+console.log("results found in about " +(((t1-t0)/1000).toFixed(4)) + " seconds")
     
     // ------------------------------ Main -----------------------------------------------
     if(filtered.length === 0){ 
@@ -129,10 +129,10 @@ return (
                 </div>
             <div className={Classes.main}>
                 {filtered && filtered.length > 0 &&  <ul className={Classes.list}>
-                {word.length >= 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
+                {word.length >= 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found ({(((t1-t0)/1000).toFixed(4))} seconds);</p></div>}
                     {filtered.map((item) => {
                         return (
-                        <li className={Classes.listItem}>
+                        <li className={Classes.listItem} key={item[2]}>
                             <p><span className={Classes.icons}><ImLocation/></span>&nbsp;{item[4] + " - " + item[5]}<p><span className={Classes.icons}><FaUser/></span>&nbsp;<strong>{item[0] + " - " + item[3]}</strong></p></p>
                             <p><span className={Classes.icons}><MdEmail/></span>&nbsp;<a href={`mailto:${item[2]}`} >{item[2]}</a><p><span className={Classes.icons}><IoBusiness/>&nbsp;</span>{item[1]}</p></p>
                         </li>
