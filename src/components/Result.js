@@ -95,9 +95,11 @@ export default function Result(props) {
         )
     })
     const t1 = performance.now();
-    
-console.log("results found in about " +(((t1-t0)/1000).toFixed(4)) + " seconds")
-    
+    var perf = 0;
+    if((((t1-t0)/1000).toFixed(4)) > 0){
+      perf = (((t1-t0)/1000).toFixed(4).split(0))
+    }else{perf = ".1"}  
+
     // ------------------------------ Main -----------------------------------------------
     if(filtered.length === 0){ 
 return (
@@ -129,7 +131,7 @@ return (
                 </div>
             <div className={Classes.main}>
                 {filtered && filtered.length > 0 &&  <ul className={Classes.list}>
-                {word.length >= 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found (0{(((t1-t0)/1000).toFixed(5).split(0))} seconds);</p></div>}
+                {word.length >= 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found (0{perf} seconds);</p></div>}
                     {filtered.map((item) => {
                         return (
                         <li className={Classes.listItem} key={item[2]}>
@@ -164,7 +166,7 @@ return (
                 </div>
             <div className={Classes.main}>
             <div className={Classes.PaginateList}>
-            {<div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found (0{(((t1-t0)/1000).toFixed(5).split(0))} seconds);</p></div>}
+            {<div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found (0{perf} seconds);</p></div>}
             {displayResults}
             <div className={Classes.paginateMain}>
             <ReactPaginate
