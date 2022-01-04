@@ -164,7 +164,7 @@ return (
                 </div>
             <div className={Classes.main}>
             <div className={Classes.PaginateList}>
-            {<div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
+            {<div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found (0{(((t1-t0)/1000).toFixed(5).split(0))} seconds);</p></div>}
             {displayResults}
             <div className={Classes.paginateMain}>
             <ReactPaginate
