@@ -11,7 +11,7 @@ import {IoBusiness} from 'react-icons/io5';
 import { CgArrowsExchangeAltV } from "react-icons/cg";
 
 export default function Result(props) {
-
+    const t0 = performance.now();
     const [order,setOrder] = useState();
     const [word,setWord] = useState(props.value);
     const [filtered,setFiltered] = useState([]);
@@ -94,10 +94,12 @@ export default function Result(props) {
                 
         )
     })
+    const t1 = performance.now();
+    
+    
     
     // ------------------------------ Main -----------------------------------------------
-    if(filtered.length === 0){
-     
+    if(filtered.length === 0){ 
 return (
   <div className={Classes.NotMatching}>
         <h3>No matches found with starting with '{word}'</h3>
@@ -106,7 +108,6 @@ return (
 )
     }else{
       if(filtered.length<=3){
-        
         return (
             <div>
                 <div className={Classes.dropdown}>
@@ -127,8 +128,8 @@ return (
               </div>
                 </div>
             <div className={Classes.main}>
-                {filtered && filtered.length > 0 && word.length > 1 && <ul className={Classes.list}>
-                {word.length > 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
+                {filtered && filtered.length > 0 &&  <ul className={Classes.list}>
+                {word.length >= 1 && <div style={{display:"flex",justifyContent:"flex-start",width:"65%",fontWeight:"bold",paddingLeft:"10px"}}><p>{filtered.length} results found;</p></div>}
                     {filtered.map((item) => {
                         return (
                         <li className={Classes.listItem}>
@@ -142,7 +143,6 @@ return (
             </div>
         )
     }else{
-      
         return(
             <div>
                 <div className={Classes.dropdown}>
@@ -185,7 +185,5 @@ return (
         )
     }
     }
-    
-    
-    
+
 }

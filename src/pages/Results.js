@@ -22,8 +22,8 @@ export default function Results() {
             setErrorStyle(Classes.searchBarError)
           }
      }
-     function onClick(){
-      if(btnSearch !== ""){
+     function onClick(e){
+      if(btnSearch !== "" && e.key === 'Enter'){
         setNewWord(btnSearch)
         setErrorStyle(Classes.searchBar)
       }else{
